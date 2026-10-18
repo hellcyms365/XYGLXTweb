@@ -99,7 +99,7 @@ define('DB_HOST', 'localhost');  // 数据库主机
 define('DB_PORT', 3306);         // 端口
 define('DB_NAME', 'hellcyms');   // 库名（与账号同名）
 define('DB_USER', 'hellcyms');   // 用户名
-define('DB_PASS', '6613Mm436');  // 密码
+define('DB_PASS', '123456');  // 密码
 ```
 
 ### 3. 放置站点目录
