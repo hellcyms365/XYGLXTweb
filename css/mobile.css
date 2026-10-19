@@ -1,0 +1,276 @@
+/* ===== 学员管理系统 - 手机端界面样式（m.php） ===== */
+* { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    background: #f2f4fa;
+    color: #1f2a44;
+    font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* ---- 顶部标题 + 搜索 ---- */
+.m-top {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: linear-gradient(135deg, #1f2a44, #2b3a67);
+    padding: 14px 14px 12px;
+    box-shadow: 0 2px 10px rgba(20,30,60,.15);
+}
+.m-title {
+    color: #fff;
+    font-size: 17px;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+.m-search {
+    display: flex;
+    gap: 8px;
+}
+.m-search input {
+    flex: 1;
+    border: none;
+    border-radius: 20px;
+    padding: 9px 14px;
+    font-size: 13px;
+    background: #fff;
+    color: #1f2a44;
+    outline: none;
+}
+.m-search input::placeholder { color: #9aa7c2; }
+.m-search-btn {
+    border: none;
+    border-radius: 20px;
+    padding: 0 16px;
+    background: #4f6ef7;
+    color: #fff;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+/* ---- 结果统计 ---- */
+.m-result-info {
+    padding: 10px 16px 2px;
+    font-size: 12px;
+    color: #6b7ba0;
+}
+.m-result-info b { color: #4f6ef7; }
+
+/* ---- 数据看板（统计卡片 + 带教分布） ---- */
+.m-dash {
+    background: #fff;
+    margin: 10px 12px 0;
+    border-radius: 14px;
+    padding: 14px 14px 10px;
+    box-shadow: 0 2px 10px rgba(30,40,80,.05);
+}
+.m-dash-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-bottom: 12px;
+}
+.m-card-t {
+    text-decoration: none;
+    color: inherit;
+    background: #f6f8ff;
+    border-radius: 10px;
+    padding: 11px 4px;
+    text-align: center;
+    border-top: 3px solid #4f6ef7;
+}
+.m-card-t:active { transform: scale(.96); }
+.m-t-num { font-size: 20px; font-weight: 800; color: #1f2a44; }
+.m-t-label { font-size: 12px; color: #6b7ba0; margin-top: 2px; }
+.m-c-all { border-top-color: #f59e0b; }
+.m-c-c1  { border-top-color: #4f6ef7; }
+.m-c-c2  { border-top-color: #06b6d4; }
+.m-c-c3  { border-top-color: #8b5cf6; }
+.m-c-cg  { border-top-color: #10b981; }
+.m-c-cr  { border-top-color: #ef4444; }
+.m-dash-coach { padding-top: 4px; }
+.m-coach-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 0;
+    text-decoration: none;
+    color: inherit;
+}
+.m-coach-label { width: 58px; font-size: 12px; color: #3d4c6b; flex-shrink: 0; }
+.m-coach-bar { flex: 1; height: 6px; background: #eef1f8; border-radius: 3px; overflow: hidden; }
+.m-coach-fill { display: block; height: 100%; background: linear-gradient(90deg, #4f6ef7, #8b5cf6); border-radius: 3px; }
+.m-coach-count { width: 34px; text-align: right; font-size: 12px; font-weight: 700; color: #4f6ef7; }
+
+/* ---- 学员卡片列表 ---- */
+.m-list {
+    padding: 8px 12px 8px; /* 底部空间由版权 footer 承担 */
+}
+.m-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 12px 14px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 8px rgba(30,40,80,.05);
+    border-left: 3px solid #4f6ef7;
+}
+.m-card-head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+}
+.m-name {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1f2a44;
+}
+.m-gender {
+    font-size: 11px;
+    padding: 1px 7px;
+    border-radius: 8px;
+}
+.m-g-m { background: #e3ecff; color: #3b5bdb; }
+.m-g-f { background: #ffe3ec; color: #d6336c; }
+.m-badge {
+    margin-left: auto;
+    font-size: 11px;
+    padding: 2px 9px;
+    border-radius: 10px;
+    font-weight: 600;
+}
+.s-ing  { background: #e3ecff; color: #3b5bdb; }
+.s-grad { background: #d1fae5; color: #0b8a4f; }
+.s-quit { background: #fee2e2; color: #c0392b; }
+.m-card-line {
+    font-size: 12px;
+    color: #3d4c6b;
+    margin-top: 3px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.m-card-line .k { color: #8a97b5; margin-right: 2px; flex-shrink: 0; }
+.m-card-line span:not(.k) { margin-right: 12px; }
+
+.m-empty {
+    text-align: center;
+    color: #9aa7c2;
+    padding: 50px 0;
+    font-size: 13px;
+}
+
+/* ---- 分页 ---- */
+.m-pager {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 4px;
+}
+.m-pager a {
+    color: #4f6ef7;
+    text-decoration: none;
+    font-size: 13px;
+    padding: 6px 12px;
+    border: 1px solid #d5dcef;
+    border-radius: 8px;
+    background: #fff;
+}
+.m-pager span:empty { width: 64px; }
+.m-pageinfo { color: #6b7ba0; font-size: 13px; }
+
+/* ---- 版权信息 ---- */
+.m-footer {
+    text-align: center;
+    color: #9aa7c2;
+    font-size: 12px;
+    padding: 14px 16px 70px; /* 底部留出固定操作栏空间 */
+}
+
+/* ---- 底部操作栏 ---- */
+.m-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 56px;
+    background: #fff;
+    border-top: 1px solid #e6eaf3;
+    display: flex;
+    box-shadow: 0 -2px 10px rgba(30,40,80,.06);
+    z-index: 60;
+}
+.m-bitem {
+    flex: 1;
+    border: none;
+    background: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1px;
+    color: #6b7ba0;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 11px;
+    padding: 4px 0;
+}
+.m-bitem:active { background: #f0f3fc; }
+.m-bico { font-size: 20px; line-height: 1; }
+.m-btxt {
+    max-width: 92%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+/* ---- 左侧滑出抽屉 ---- */
+.m-mask {
+    position: fixed;
+    inset: 0;
+    background: rgba(15,23,42,.45);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .25s;
+    z-index: 70;
+}
+.m-mask.show { opacity: 1; visibility: visible; }
+.m-drawer {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 240px;
+    background: #fff;
+    transform: translateX(-100%);
+    transition: transform .28s ease;
+    z-index: 80;
+    box-shadow: 4px 0 16px rgba(30,40,80,.12);
+    overflow-y: auto;
+}
+.m-drawer.open { transform: translateX(0); }
+.m-drawer-title {
+    padding: 18px 16px 12px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #1f2a44;
+    border-bottom: 1px solid #eef1f8;
+}
+.m-drawer-list { list-style: none; padding: 6px 0; }
+.m-drawer-list li {
+    padding: 12px 16px;
+    font-size: 14px;
+    color: #3d4c6b;
+    border-bottom: 1px solid #f5f7fc;
+    cursor: pointer;
+}
+.m-drawer-list li:active { background: #f0f3fc; }
+.m-drawer-list li.active {
+    color: #4f6ef7;
+    font-weight: 700;
+    background: #eef2ff;
+}

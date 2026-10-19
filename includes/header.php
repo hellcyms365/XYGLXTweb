@@ -29,7 +29,7 @@ $adminName = $admin['real_name'] ?: ($admin['username'] ?? '管理员');
 
     <link rel="stylesheet" href="../css/style.css">
 </head>
-<body class="admin-body">
+<body class="admin-body"<?= isset($bodyData) ? ' ' . $bodyData : '' ?>>
 <div class="layout">
     <!-- 侧边栏 -->
     <aside class="sidebar">
@@ -79,6 +79,7 @@ $adminName = $admin['real_name'] ?: ($admin['username'] ?? '管理员');
     <div class="main">
         <header class="topbar">
             <div class="topbar-left">
+                <button class="nav-toggle" id="navToggle" type="button" aria-label="打开菜单">☰</button>
                 <div class="topbar-title"><?= htmlspecialchars($pageTitle) ?></div>
                 <a class="btn-back" href="../index.php">🌐 查看前端</a>
             </div>
@@ -88,4 +89,5 @@ $adminName = $admin['real_name'] ?: ($admin['username'] ?? '管理员');
                 <a class="btn btn-plain btn-logout" href="logout.php">退出登录</a>
             </div>
         </header>
+        <div class="nav-mask" id="navMask"></div>
         <main class="content">
